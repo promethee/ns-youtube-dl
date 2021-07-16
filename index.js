@@ -6,7 +6,6 @@ let match = require('fs-router')(__dirname + '/routes');
 const { save_directory = 'files' } = config;
 
 const mkSaveDirectory = (current, next, _) => {
-  console.info({ current, next });
   const directory = `${current}/${next}`;
   if (current.length > 1 && !fs.existsSync(current)) fs.mkdirSync(`${current}`);
   if (!fs.existsSync(directory)) fs.mkdirSync(directory);
