@@ -29,7 +29,7 @@ module.exports.GET = async (req, res) => {
   if (alreadyDownloaded) result = { statusCode: 204, message: 'video has already been downloaded' };
   result.statusCode = partiallyDownloaded ? 206 : 202;
   // @ts-ignore
-  result.message = videoDetails;
+  result.message = { videoFilename, keywordsFilename };
 
   ytdl(url).pipe(fs.createWriteStream(videoFilename));
   fs.writeFileSync(keywordsFilename, JSON.stringify(keywords), 'utf8');
