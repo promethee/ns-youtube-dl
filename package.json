@@ -1,0 +1,25 @@
+{
+  "name": "ns-youtube-dl",
+  "version": "1.0.0",
+  "description": "A nanoservice to download youtube files",
+  "main": "index.js",
+  "scripts": {
+    "start": "micro",
+    "dev": "micro-dev",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "promethee",
+  "license": "MIT",
+  "dependencies": {
+    "fs-router": "^0.5.0",
+    "micro": "^9.3.4",
+    "ytdl-core": "^4.8.3"
+  },
+  "devDependencies": {
+    "micro-dev": "^3.0.0"
+  },
+  "config": {
+    "save_directory": "./files"
+  }
+}
